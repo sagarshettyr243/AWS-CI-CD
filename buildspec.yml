@@ -4,8 +4,7 @@ phases:
   install:
     commands:
       - echo Installing NGINX
-      - sudo rm -rf /var/lib/apt/lists/*
-      - sudo apt-get update
+      - sudo apt-get update -o Acquire::Retries=3 -o Acquire::Timeout=10
       - sudo apt install nginx -y
   build:
     commands:
@@ -14,7 +13,7 @@ phases:
   post_build:
     commands:
       - echo Configuring NGINX
-      
+      # Add NGINX configuration commands here if needed
 artifacts:
   files:
     - /var/www/html/index.html
