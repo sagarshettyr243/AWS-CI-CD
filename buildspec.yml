@@ -4,6 +4,7 @@ phases:
   install:
     commands:
       - echo Installing NGINX
+      - sudo dnf update -y
       - sudo apt install nginx -y
   build:
     commands:
