@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - echo Installing NGINX
-      - sudo apt-get update -o Acquire::Retries=3 -o Acquire::Timeout=10
+      - sudo apt update 
       - sudo apt install nginx -y
   build:
     commands:
